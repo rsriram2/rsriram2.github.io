@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Rushil Srirambhatla — research in computer vision, medical imaging, and multimodal biomedical AI.">
+  <title>Rushil Srirambhatla | Biomedical AI Research</title>
+  <style>
+    :root{--bg:#070508;--surface:#100b14;--surface-2:#17101d;--border:#35263f;--text:#f3eef6;--muted:#b6aabd;--purple:#4B0082;--accent:#c18aeb;--accent-2:#d8b4f2;--max:1080px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.68 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+    .wrap{max-width:var(--max);margin:auto;padding:0 26px}.top{position:sticky;top:0;z-index:30;background:rgba(7,5,8,.93);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
+    .top-inner{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:20px}.brand{color:var(--text);font-size:15px;font-weight:750;letter-spacing:.02em}.nav{display:flex;gap:23px;flex-wrap:wrap}.nav a{font-size:13px;color:var(--muted);font-weight:600}.nav a:hover{color:var(--text)}
+    .hero{padding:67px 0 57px;border-bottom:1px solid var(--border)}.hero-grid{display:grid;grid-template-columns:1.55fr .9fr;align-items:center;gap:55px}.eyebrow{color:var(--accent-2);font-size:12px;font-weight:750;letter-spacing:.16em;text-transform:uppercase}h1{font-size:clamp(34px,5.5vw,58px);line-height:1.13;letter-spacing:-.045em;margin:12px 0 16px;font-weight:780}h1 span{color:var(--accent)}.lead{font-size:17px;color:#d1c5d7;line-height:1.75;max-width:660px}.chips{display:flex;gap:9px;flex-wrap:wrap;margin:21px 0 23px}.chip{font-size:12px;color:#d8cddd;border:1px solid #50355f;background:#160d1c;padding:4px 10px;border-radius:99px}.actions{display:flex;gap:10px;flex-wrap:wrap}.action{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid #664a76;border-radius:8px;padding:9px 15px;font-weight:650;font-size:13px;color:var(--text)}.action.primary{background:var(--purple);color:#fff;border-color:#7025a3}.action:hover{text-decoration:none;border-color:var(--accent)}.action.primary:hover{background:#64159a}
+    /* Compact portrait introduction and research directions */
+    .hero{padding:55px 0 47px}
+    .hero-grid{grid-template-columns:minmax(0,1fr) 285px;gap:54px}
+    .portrait-area{display:flex;align-items:center;justify-content:center}
+    .portrait-ring{width:285px;height:285px;display:block;border:2px solid var(--purple);border-radius:50%;padding:5px;background:#160d1c;box-shadow:0 0 0 1px #4a3157;overflow:hidden}
+    .portrait-ring img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center;transform: translateX(30px) scale(1.3);background:#1b1022}
+    .glance{padding:38px 0 43px;border-bottom:1px solid var(--border)}
+    .glance-heading{font-size:21px;letter-spacing:-.025em;margin:0 0 17px}
+    .glance-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .glance-card{padding:17px 16px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}
+    .glance-card h3{font-size:14px;line-height:1.35;margin:0 0 7px;color:var(--text)}
+    .glance-card p{font-size:12px;line-height:1.6;margin:0;color:#bdb0c5}
+    section.content{padding:65px 0;border-bottom:1px solid var(--border);scroll-margin-top:70px}.section-title{font-size:28px;letter-spacing:-.03em;line-height:1.2;margin:0 0 13px}.section-intro{color:var(--muted);max-width:none;width:100%;margin:0 0 27px}.columns{display:grid;grid-template-columns:1fr 1fr;gap:17px}.card{border:1px solid var(--border);background:var(--surface);border-radius:12px;padding:22px;min-width:0}.card.featured{background:linear-gradient(140deg,#24102f 0%,var(--surface) 72%)}.card .meta,.pub .meta{font-size:12px;color:var(--accent-2);font-weight:700;letter-spacing:.045em}.card h3{font-size:19px;line-height:1.32;margin:10px 0}.card p{color:#cfc3d5;margin:10px 0;font-size:14px}.card .result{border-top:1px solid var(--border);padding-top:12px;margin-top:17px;color:#eee7f2}.small-links{display:flex;flex-wrap:wrap;gap:15px;margin-top:14px;font-size:13px;font-weight:650}.small-links a::after{content:' ↗';font-size:11px}.tagline{display:block;font-size:12px;color:var(--muted);margin-top:13px}
+    .pub-list,.talk-list,.exp-list{display:grid;gap:11px}.pub,.talk,.exp{padding:19px 21px;border:1px solid var(--border);background:var(--surface);border-radius:10px}.pub h3,.talk h3{font-size:15px;line-height:1.43;margin:5px 0 6px;font-weight:720}.pub p,.talk p,.exp p{color:var(--muted);font-size:13px;margin:4px 0}.pub p strong{color:var(--text)}.year-label{font-size:11px;letter-spacing:.11em;color:var(--accent-2);font-weight:750;text-transform:uppercase}.pub-link{font-size:12px;font-weight:650}.exp{display:grid;grid-template-columns:1fr 2.2fr;gap:18px}.exp h3{font-size:15px;margin:0 0 5px}.exp span{font-size:12px;color:var(--muted)}.exp p{margin:0}.note{font-size:12px;color:var(--muted);margin-top:14px}.foot{padding:28px 0 42px;color:var(--muted);font-size:12px}.foot .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    @media(max-width:850px){.glance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:760px){.hero{padding:39px 0}.hero-grid,.columns,.exp{grid-template-columns:1fr}.hero-grid{gap:26px}.portrait-area{grid-row:1;justify-content:flex-start}.portrait-ring{width:189px;height:189px}.nav{gap:12px}.nav a{font-size:12px}.top-inner{align-items:flex-start;padding-top:12px;padding-bottom:12px;flex-direction:column;gap:8px}.glance{padding:31px 0 35px}section.content{padding:46px 0}.section-title{font-size:25px}}
+    @media(max-width:420px){.glance-grid{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+    /* Unified image + research/publication cards */
+    .research-list{display:grid;gap:14px}
+    .research-entry{display:grid;grid-template-columns:minmax(230px,35%) minmax(0,1fr);gap:22px;align-items:start;padding:17px;border:1px solid var(--border);background:var(--surface);border-radius:12px}
+    .research-entry:first-child{background:linear-gradient(135deg,#24102f 0%,var(--surface) 70%)}
+    .figure-frame{display:block;aspect-ratio:16/10;border:1px solid #4a3157;border-radius:8px;overflow:hidden;background:#100a15}
+    .figure-frame img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+    .figure-frame iframe{width:100%;height:calc(100% + 4px);margin-top:-2px;border:0;display:block;background:#100a15}
+    .figure-frame.figure-frame--mri{aspect-ratio:1974/1424}
+    .figure-frame.figure-frame--cortical{aspect-ratio:959.76/540;background:#fff}
+    .research-copy{min-width:0;display:flex;flex-direction:column;gap:7px}
+    .research-copy h3{font-size:18px;line-height:1.34;letter-spacing:-.015em;margin:0;font-weight:740}
+    .research-copy .entry-meta{font-size:11px;font-weight:750;letter-spacing:.08em;color:var(--accent-2);text-transform:uppercase}
+    .research-copy .authors{color:#b9adbf;font-size:12px;line-height:1.5;margin:0}
+    .research-copy .summary{color:#cec2d4;font-size:13px;line-height:1.63;margin:2px 0 0}
+    .research-copy .key-result{font-size:13px;color:#eee7f2;margin:0}
+    .research-copy .entry-links{display:flex;gap:16px;flex-wrap:wrap;margin-top:3px;font-size:12px;font-weight:700}
+    .research-copy .entry-links a::after{content:' ↗';font-size:11px}
+    .research-copy .status{color:#c5a0dc;font-size:12px}
+    .figure-instruction{color:var(--muted);font-size:12px;margin:13px 0 0}
+    @media(max-width:700px){.research-entry{grid-template-columns:1fr;gap:13px;padding:13px}.figure-frame{aspect-ratio:16/8}.research-copy h3{font-size:17px}}
+
+    /* Presentation thumbnails: same image-left, details-right rhythm as research cards */
+    .talk{display:grid;grid-template-columns:minmax(180px,26%) minmax(0,1fr);gap:20px;align-items:center;padding:15px}
+    .talk-figure{display:block;aspect-ratio:16/10;border:1px solid #4a3157;border-radius:8px;overflow:hidden;background:#100a15}
+    .talk-figure img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+    .talk-figure--pending{display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;color:var(--accent-2);font-size:12px;font-weight:700;letter-spacing:.04em}
+    a.talk-figure{transition:border-color .15s ease}
+    a.talk-figure:hover{border-color:var(--accent)}
+    a.talk-figure:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+    .talk-content{min-width:0}
+    .talk-figure-caption{font-size:11px;color:var(--muted);margin:6px 0 0}
+    @media(max-width:650px){.talk{grid-template-columns:1fr;gap:13px}.talk-figure{max-width:440px}}
+
+    /* Research experience: compact academic affiliation cards */
+    .exp-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .exp{display:flex;flex-direction:column;gap:0;min-height:0;padding:19px 18px}
+    .exp .role-label{display:block;font-size:10px;font-weight:700;line-height:1.5;letter-spacing:.055em;text-transform:uppercase;color:var(--accent-2);margin:0 0 9px}
+    .exp h3{font-size:16px;line-height:1.35;margin:0 0 3px;color:var(--text)}
+    .exp .lab-label{display:block;font-size:12px;line-height:1.5;color:var(--muted);margin-bottom:9px}
+    .exp .exp-details{border-top:1px solid var(--border);padding-top:9px;display:grid;gap:2px}
+    .exp .exp-details span{display:block;font-size:12px;line-height:1.55;color:#c2b6c9}
+    .exp .exp-focus{margin-top:auto;padding-top:12px}
+    .exp .exp-focus span{display:inline-block;background:#24152e;border:1px solid #3b2748;border-radius:5px;padding:5px 9px;color:#d8b4f2;font-size:11px;line-height:1.4;font-weight:600}
+    /* Compact editorial news timeline */
+    .news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .news-item{border:1px solid var(--border);border-radius:10px;background:var(--surface);padding:20px;min-width:0}
+    .news-item time{display:block;color:var(--accent-2);font-size:11px;letter-spacing:.08em;font-weight:750;text-transform:uppercase;margin-bottom:11px}
+    .news-item h3{font-size:15px;line-height:1.45;margin:0 0 8px}
+    .news-item p{color:var(--muted);font-size:13px;line-height:1.65;margin:0}
+    .news-item a{display:inline-block;font-size:12px;font-weight:700;margin-top:10px}
+    @media(max-width:900px){.exp-list,.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:600px){.exp-list,.news-grid{grid-template-columns:1fr}.exp{min-height:0}.news-item{padding:18px}}
+
+    /* Restrained, one-time motion for the academic portfolio */
+    @keyframes hero-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes portrait-reveal{from{opacity:0}to{opacity:1}}
+    .motion-ready .hero-copy{animation:hero-rise 450ms cubic-bezier(.22,.7,.3,1) both}
+    .motion-ready .portrait-area{animation:portrait-reveal 600ms ease-out 120ms both}
+    .glance-card,.news-item,.research-entry,.talk,.exp{transition:transform 180ms ease,border-color 180ms ease,box-shadow 180ms ease}
+    .motion-ready .glance-card,.motion-ready .news-item,.motion-ready .research-entry,.motion-ready .talk,.motion-ready .exp{opacity:0;transform:translateY(12px);transition:opacity 400ms ease,transform 400ms cubic-bezier(.22,.7,.3,1),border-color 180ms ease,box-shadow 180ms ease;transition-delay:var(--reveal-delay,0ms)}
+    .motion-ready .glance-card.is-visible,.motion-ready .news-item.is-visible,.motion-ready .research-entry.is-visible,.motion-ready .talk.is-visible,.motion-ready .exp.is-visible{opacity:1;transform:translateY(0)}
+    @media(hover:hover){
+      .glance-card:hover,.news-item:hover,.research-entry:hover,.talk:hover,.exp:hover{transform:translateY(-3px);border-color:#5d3d6d;box-shadow:0 8px 22px rgba(0,0,0,.18)}
+      .motion-ready .glance-card.is-visible:hover,.motion-ready .news-item.is-visible:hover,.motion-ready .research-entry.is-visible:hover,.motion-ready .talk.is-visible:hover,.motion-ready .exp.is-visible:hover{transform:translateY(-3px)}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .motion-ready .hero-copy,.motion-ready .portrait-area{animation:none;opacity:1;transform:none}
+      .motion-ready .glance-card,.motion-ready .news-item,.motion-ready .research-entry,.motion-ready .talk,.motion-ready .exp,.glance-card:hover,.news-item:hover,.research-entry:hover,.talk:hover,.exp:hover{opacity:1;transform:none;transition:none}
+    }
+  </style>
+</head>
+<body>
+<header class="top"><div class="wrap top-inner"><a class="brand" href="#top">Rushil Srirambhatla</a><nav class="nav" aria-label="Main navigation"><a href="#news">News</a><a href="#research">Research &amp; Publications</a><a href="#presentations">Presentations</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav></div></header>
+<main id="top">
+  <div class="hero"><div class="wrap hero-grid">
+    <div class="hero-copy"><div class="eyebrow">Biomedical AI · Computer Vision · Medical Imaging</div><h1>Rushil <span>Srirambhatla</span></h1>
+      <p class="lead">I develop machine learning methods for medical imaging, from multimodal 3D CT generation to robust neuroimaging analysis and disease-related representation learning. I am completing a B.S. in Applied Mathematics &amp; Statistics and Cognitive Science at Johns Hopkins University (December 2026).</p>
+      <div class="chips"><span class="chip">Computer Vision</span><span class="chip">3D generative modeling</span><span class="chip">Medical Imaging</span><span class="chip">Multimodal clinical AI</span></div>
+      <div class="actions"><a class="action primary" href="#research">Explore research</a><a class="action" href="./Rushil_Srirambhatla_phd_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a><a class="action" href="mailto:rushil.srirambhatla10@gmail.com">Email</a><a class="action" href="https://github.com/rsriram2" target="_blank" rel="noopener">GitHub ↗</a></div>
+    </div>
+    <div class="portrait-area"><div class="portrait-ring"><img src="./images/rushil.jpg" alt="Rushil Srirambhatla" width="176" height="176"></div></div>
+  </div></div>
+  <div class="glance" aria-label="Research at a glance"><div class="wrap"><h2 class="glance-heading">Research at a Glance</h2>
+    <div class="glance-grid">
+      <div class="glance-card"><h3>Generative Medical AI</h3><p>Text-conditioned 3D CT synthesis and clinically guided image generation.</p></div>
+      <div class="glance-card"><h3>Medical Computer Vision</h3><p>Robust brain extraction, image segmentation, and quantitative 3D analysis.</p></div>
+      <div class="glance-card"><h3>Neuroimaging &amp; Representation Learning</h3><p>Brain-age prediction, MRI reconstruction, and imaging biomarkers of disease.</p></div>
+      <div class="glance-card"><h3>Reliable Biomedical ML</h3><p>Reproducible benchmarks, interpretable models, and clinically meaningful evaluation.</p></div>
+    </div>
+  </div></div>
+  <section class="content" id="news"><div class="wrap">
+    <h2 class="section-title">News</h2>
+    <p class="section-intro">Recent research updates, acceptances, and conference announcements.</p>
+    <div class="news-grid">
+      <article class="news-item"><time datetime="2026-11">November 2026 · Manuscript update</time><h3>CT brain-extraction benchmark pending acceptance</h3><p>Our multi-site evaluation of seven automated CT brain-extraction methods across 5,062 scans is pending acceptance at <em>BMC Medical Imaging</em>.</p></article>
+      <article class="news-item"><time datetime="2026-10">October 2026 · Conference acceptance</time><h3>Stroke 2027 oral abstract accepted</h3><p>Co-authored work on insurance coverage gaps among working-age U.S. stroke survivors was accepted for an oral presentation at the 2027 International Stroke Conference.</p></article>
+      <article class="news-item"><time datetime="2026-07">July 2026 · Paper acceptance</time><h3>3D MRI autoencoder accepted at ECCV workshop</h3><p>Our paper on memory-efficient, skip-connection-free whole-brain MRI reconstruction was accepted to the ECCV 2026 AI4M3D Workshop.</p></article>
+    </div>
+  </div></section>
+  <section class="content" id="research"><div class="wrap"><h2 class="section-title">Research &amp; Publications</h2>
+    <p class="section-intro">Selected work in medical computer vision, 3D imaging, multimodal learning, and computational genomics.</p>
+    <div class="research-list">
+      <article class="research-entry">
+        <div class="figure-frame"><img src="./images/stanford-ct-2.png" alt="Representative clinical-report-conditioned 3D CT synthesis result" loading="lazy"></div>
+        <div class="research-copy">
+          <div class="entry-meta">Ongoing research · Stanford AIDE Lab</div>
+          <h3>Clinical-report-conditioned 3D CT synthesis</h3>
+          <p class="authors"><strong>Rushil Srirambhatla</strong>, Akshay Chaudhari, David Larson · Stanford AIDE Lab</p>
+          <p class="summary">Fine-tuned three MAISI diffusion U-Nets with ClinicalT5 cross-attention, comparing impression-only, full-report, and MedGemma-structured reports on matched study splits. Built preprocessing for 25,489 Merlin CT studies.</p>
+          <p class="key-result"><strong>Key finding:</strong> Structured conditioning improved BiomedCLIP text–image alignment by ~42%; fixed-noise counterfactual experiments revealed limitations in anatomical control.</p>
+          <div class="entry-links"><a href="https://github.com/rsriram2/maisi_3d_ct_synthesis" target="_blank" rel="noopener noreferrer">Code</a><a href="./images/stanford_rsl_reu_pres.pdf" target="_blank" rel="noopener">Presentation PDF</a></div>
+        </div>
+      </article>
+      <article class="research-entry">
+        <div class="figure-frame"><img src="./images/ct-extraction.png" alt="Comparison of seven CT brain-extraction methods across sagittal, coronal, and axial views" loading="lazy"></div>
+        <div class="research-copy">
+          <div class="entry-meta">BMC Medical Imaging · Pending acceptance</div>
+          <h3>Benchmarking Automated CT Brain Extraction Methods Across 5,000 Scans</h3>
+          <p class="authors"><strong>Rushil Srirambhatla</strong>, Nathan Walborn, Daniel Hanley, John Muschelli</p>
+          <p class="summary">Developed Robust-CTBET and benchmarked seven brain-extraction methods on 5,062 CT scans from 499 patients at 78 sites, assessing registration, volumetrics, and downstream utility.</p>
+          <p class="key-result"><strong>Key finding:</strong> Robust-CTBET outperformed six competing methods, achieving Dice ≈ 0.98 and a 0.30% scan-level failure rate.</p>
+          <div class="entry-links"><a href="https://github.com/rsriram2/brain-extraction-benchmark" target="_blank" rel="noopener noreferrer">Code &amp; results</a><a href="https://www.ahajournals.org/doi/10.1161/str.57.suppl_1.WP305" target="_blank" rel="noopener noreferrer">Abstract</a></div>
+        </div>
+      </article>
+      <article class="research-entry">
+        <div class="figure-frame figure-frame--mri"><img src="./images/mri-autoencoder.png" alt="Figure for Memory-Efficient Skip-Connection-Free 3D Autoencoder for Whole-Brain MRI Reconstruction" loading="lazy"></div>
+        <div class="research-copy">
+          <div class="entry-meta">ECCV 2026 AI4M3D workshop · Accepted</div>
+          <h3>Memory-Efficient Skip-Connection-Free 3D Autoencoder for Whole-Brain MRI Reconstruction</h3>
+          <p class="authors"><strong>Rushil Srirambhatla</strong>, Helmet T. Karim, Jacques-Yves Campion</p>
+          <p class="summary">Designed a skip-connection-free 3D autoencoder with a 512-dimensional bottleneck and pixel-shuffle decoder for full-volume T1-weighted MRI reconstruction, evaluated across 40,841 scans.</p>
+          <p class="key-result"><strong>Key finding:</strong> 19.6% less peak GPU memory, 10.4% faster forward/backward execution, and 13.4% fewer parameters versus the no-pixel-shuffle baseline.</p>
+          <div class="entry-links"><a href="https://github.com/tetra-tools/RS-JYC-HK-T1wMNIBrainAgeRegression/tree/main" target="_blank" rel="noopener noreferrer">Code &amp; results</a><a href="https://openreview.net/pdf?id=w8H29tso9F" target="_blank" rel="noopener noreferrer">Paper</a></div>
+        </div>
+      </article>
+      <article class="research-entry">
+        <div class="figure-frame"><img src="./images/brain-age.png" alt="Brain maps showing disease-related brain-age effects across axial, sagittal, and coronal views" loading="lazy"></div>
+        <div class="research-copy">
+          <div class="entry-meta">Manuscript submitted · Co-first author</div>
+          <h3>Deep Learning-Derived Brain Age from 40,000+ MRI Scans Reveals Disease-Specific Aging Trajectories</h3>
+          <p class="authors">Jacques-Yves Campion* and <strong>Rushil Srirambhatla*</strong>, Carmen Andreescu, et al. · *Equal contribution</p>
+          <p class="summary">Developed brain-age prediction pipelines using harmonized 3D MRI and studied disease-associated deviations in predicted brain age across multi-cohort clinical imaging data.</p>
+          <p class="key-result"><strong>Key finding:</strong> 3.14-year held-out test MAE in the brain-age prediction study.</p>
+          <div class="entry-links"><a href="https://github.com/tetra-tools/RS-JYC-HK-T1wMNIBrainAgeRegression/tree/main" target="_blank" rel="noopener noreferrer">Code &amp; results</a></div>
+        </div>
+      </article>
+      <article class="research-entry">
+        <div class="figure-frame"><img src="./images/wmh.jpeg" alt="White matter hyperintensity T1w/T2w-FLAIR ratio analysis figure" loading="lazy"></div>
+        <div class="research-copy">
+          <div class="entry-meta">2026 medRxiv preprint · Under revision</div>
+          <h3>Altered T1w/T2w-FLAIR Ratio in White Matter Hyperintensities as an Indicator of Structural Integrity Loss</h3>
+          <p class="authors"><strong>Rushil Srirambhatla</strong>, Jacques-Yves Campion, Thomas Desmidt, et al.</p>
+          <p class="summary">Integrated LST-AI lesion segmentation, ANTs preprocessing, and relative T1w/T2w-FLAIR measures in 576 participants to investigate Alzheimer’s disease, vascular dementia, and amyloid biomarkers.</p>
+          <p class="key-result"><strong>Key finding:</strong> White matter hyperintensity (WMH) T1w/T2w-FLAIR ratios were significantly higher in individuals with Alzheimer’s disease and vascular dementia compared with those with subjective cognitive impairment, suggesting disease-associated alterations in white matter tissue integrity.</p>
+          <div class="entry-links"><a href="https://github.com/rsriram2/t1t2-ratio" target="_blank" rel="noopener noreferrer">Code &amp; results</a><a href="https://doi.org/10.64898/2026.07.28.26359139" target="_blank" rel="noopener noreferrer">Preprint</a></div>
+        </div>
+      </article>
+      <article class="research-entry">
+          <div class="figure-frame figure-frame--cortical"><img src="./images/cortical.png" alt="Cortical surface maps comparing cognitive performance across age groups in the ADNI dataset" loading="lazy"></div>        <div class="research-copy">
+          <div class="entry-meta">2026 · medRxiv preprint · MGH / Harvard</div>
+          <h3>Cortical Thickness Signatures of High vs. Low Cognitive Performers in the ADNI Dataset</h3>
+          <p class="authors"><strong>Rushil Srirambhatla</strong>, Yue Hong, Yiwen Zhang, David H. Salat</p>
+          <p class="summary">Analyzed FreeSurfer-derived cortical thickness across 68 regions in relation to cognition using age-stratified regression, ANCOVA, and FDR correction.</p>
+          <p class="key-result"><strong>Key finding:</strong> Executive-function associations were most extensive among adults aged 80 and older.</p>
+          <div class="entry-links"><a href="https://github.com/rsriram2/Resilience" target="_blank" rel="noopener noreferrer">Code &amp; results</a></div>
+        </div>
+      </article>
+      <article class="research-entry">
+        <div class="figure-frame"><img src="./images/bioethics.png" alt="Illustration accompanying The Black Box Dilemma commentary on human–AI collaboration" loading="lazy"></div>
+        <div class="research-copy">
+          <div class="entry-meta">2024 · Published commentary · The American Journal of Bioethics</div>
+          <h3>The Black Box Dilemma: Challenges in Human-AI Collaboration in ML-CDSS</h3>
+          <p class="authors">Rishab Jain, <strong>Rushil Srirambhatla</strong>, John Kessler, Ram Goel</p>
+          <p class="summary">A commentary on interpretability and human–AI collaboration in machine-learning-based clinical decision support.</p>
+          
+          <div class="entry-links"><a href="https://doi.org/10.1080/15265161.2024.2377105" target="_blank" rel="noopener noreferrer">Published commentary</a></div>
+        </div>
+      </article>
+      <article class="research-entry">
+        <div class="figure-frame"><img src="./images/covid.png" alt="COVID-19 CT classification and model-interpretability figure" loading="lazy"></div>
+        <div class="research-copy">
+          <div class="entry-meta">2022 · medRxiv preprint</div>
+          <h3>Prediction of COVID-19 Diagnosis from Healthy and Pneumonia CT Scans Using Convolutional Neural Networks</h3>
+          <p class="authors"><strong>Rushil Srirambhatla</strong>, Helmet T. Karim</p>
+          <p class="summary">Developed an interpretable CNN-based approach to classifying COVID-19 from CT imaging, incorporating lung-focused preprocessing and activation-map visualization.</p>
+          
+          <div class="entry-links"><a href="https://github.com/rsriram2/CODET" target="_blank" rel="noopener noreferrer">Code</a><a href="https://doi.org/10.1101/2022.10.20.22281334" target="_blank" rel="noopener noreferrer">Preprint</a></div>
+        </div>
+      </article>
+    </div>
+  </div></section>
+  <section class="content" id="presentations"><div class="wrap"><h2 class="section-title">Selected presentations</h2><p class="section-intro">A selection of first-author presentations and collaborative conference contributions. Click a thumbnail when a public abstract or presentation page is available.</p>
+  <div class="talk-list">
+    <article class="talk">
+      <div><a class="talk-figure" href="https://doi.org/10.1161/str.57.suppl_1.WP305" target="_blank" rel="noopener noreferrer" aria-label="View abstract for Comparison of Automated Brain Extraction Methods in Over 5,000 Computed Tomography Scans"><img src="./images/presentation-stroke-2026.jpg" alt="Presentation thumbnail for Comparison of Automated Brain Extraction Methods in Over 5,000 Computed Tomography Scans" loading="lazy"></a></div>
+      <div class="talk-content"><div class="year-label">2026 · International Stroke Conference</div><h3>Comparison of Automated Brain Extraction Methods in Over 5,000 Computed Tomography Scans</h3><p>First author · Conference abstract</p><a class="pub-link" href="https://doi.org/10.1161/str.57.suppl_1.WP305" target="_blank" rel="noopener noreferrer">Abstract DOI ↗</a></div>
+    </article>
+    <article class="talk">
+      <div><a class="talk-figure" href="https://epostersonline.com/aaic2026/poster/136" target="_blank" rel="noopener noreferrer" aria-label="View the AAIC poster for Altered T1w/T2w Ratio in White Matter Hyperintensities"><img src="./images/presentation-wmh-aaic-sobp.jpg" alt="Presentation thumbnail for Altered T1w/T2w Ratio in White Matter Hyperintensities as an Indicator of Structural Integrity Loss" loading="lazy"></a></div>
+      <div class="talk-content"><div class="year-label">2026 · AAIC / Society of Biological Psychiatry (SOBP)</div><h3>Altered T1w/T2w Ratio in White Matter Hyperintensities as an Indicator of Structural Integrity Loss</h3><p>First author · Poster presentation</p><a class="pub-link" href="https://epostersonline.com/aaic2026/poster/136" target="_blank" rel="noopener noreferrer">AAIC Poster ↗</a></div>
+    </article>
+    <article class="talk">
+      <div><a class="talk-figure" href="https://epostersonline.com/aaic2026/poster/1721" target="_blank" rel="noopener noreferrer" aria-label="View the AAIC poster for Deep Learning–Derived Brain Age from 40,000+ MRI Scans"><img src="./images/presentation-brainage-aaic-sobp.png" alt="Presentation figure for Deep Learning–Derived Brain Age from 40,000+ MRI Scans Reveals Disease-Specific Aging Trajectories" loading="lazy"></a></div>
+      <div class="talk-content"><div class="year-label">2026 · AAIC / Society of Biological Psychiatry (SOBP)</div><h3>Deep Learning–Derived Brain Age from 40,000+ MRI Scans Reveals Disease-Specific Aging Trajectories</h3><p>Co-first author · Poster presentation</p><a class="pub-link" href="https://epostersonline.com/aaic2026/poster/1721" target="_blank" rel="noopener noreferrer">AAIC Poster ↗</a></div>
+    </article>
+    <article class="talk">
+      <div><a class="talk-figure" href="./images/final_myeloid_workshop_poster.pdf" target="_blank" rel="noopener" aria-label="Open the poster PDF for Machine Learning–Driven Screening for IDH1/2-Mutant Clonal Hematopoiesis"><img src="./images/presentation-myeloid-2026.jpg" alt="Presentation thumbnail for Machine Learning–Driven Screening for Individuals at High Risk of IDH1/2-Mutant Clonal Hematopoiesis" loading="lazy"></a></div>
+      <div class="talk-content"><div class="year-label">2026 · 15th International Myeloid Workshop</div><h3>Machine Learning–Driven Screening for Individuals at High Risk of IDH1/2-Mutant Clonal Hematopoiesis</h3><p>First author · Poster presentation</p><a class="pub-link" href="./images/final_myeloid_workshop_poster.pdf" target="_blank" rel="noopener">Poster PDF ↗</a></div>
+    </article>
+    <article class="talk">
+      <div><a class="talk-figure" href="./images/MGBN_Poster_Final_Submission.pdf" target="_blank" rel="noopener" aria-label="Open the poster PDF for Cortical Thickness Signatures of High vs. Low Cognitive Performers"><img src="./images/presentation-mgb-2025.png" alt="Presentation thumbnail for Cortical Thickness Signatures of High vs. Low Cognitive Performers in the ADNI Dataset" loading="lazy"></a></div>
+      <div class="talk-content"><div class="year-label">2025 · Mass General Brigham Neuroscience Day</div><h3>Cortical Thickness Signatures of High vs. Low Cognitive Performers in the ADNI Dataset</h3><p>First author · Poster presentation</p><a class="pub-link" href="./images/MGBN_Poster_Final_Submission.pdf" target="_blank" rel="noopener">Poster PDF ↗</a></div>
+    </article>
+    <article class="talk">
+      <div><a class="talk-figure" href="https://symposium.foragerone.com/dreams-fall-2024/presentations/67237" target="_blank" rel="noopener noreferrer" aria-label="View the DREAMS presentation for A Task-Specific Curriculum Learning Approach"><img src="./images/presentation-dreams-2024.jpg" alt="Presentation thumbnail for A Task-Specific Curriculum Learning Approach to Predict the Onset of Alzheimer&#x27;s Disease" loading="lazy"></a></div>
+      <div class="talk-content"><div class="year-label">2024 · Pitt Psychiatry Research Day / Johns Hopkins DREAMS</div><h3>A Task-Specific Curriculum Learning Approach to Predict the Onset of Alzheimer&#x27;s Disease</h3><p>First author · Poster presentation</p><a class="pub-link" href="https://symposium.foragerone.com/dreams-fall-2024/presentations/67237" target="_blank" rel="noopener noreferrer">Poster ↗</a></div>
+    </article>
+    <article class="talk">
+      <div><a class="talk-figure" href="./images/UltraNet.pdf" target="_blank" rel="noopener" aria-label="Open the UltraNet presentation PDF"><img src="./images/presentation-ultranet-2023.png" alt="Presentation thumbnail for UltraNet lung ultrasound A-line and B-line differentiation" loading="lazy"></a></div>
+      <div class="talk-content"><div class="year-label">2023 · Point-of-Care Ultrasound Research Seminar</div><h3>UltraNet: Differentiating A-Line and B-Line Lung Ultrasound Using Deep Learning</h3><p>First author · Research seminar presentation</p><div class="small-links"><a href="./images/UltraNet.pdf" target="_blank" rel="noopener">Presentation PDF</a><a href="https://www.linkedin.com/feed/update/urn:li:activity:7103482839240765440/" target="_blank" rel="noopener noreferrer">LinkedIn post</a></div></div>
+    </article>
+    <article class="talk">
+      <div><div class="talk-figure talk-figure--pending" role="img" aria-label="Oral presentation in February 2027">Check back later in February 2027</div></div>
+      <div class="talk-content"><div class="year-label">2027 · International Stroke Conference · Accepted oral abstract</div><h3>Persistent Insurance Coverage Gaps Among Working-Age United States Stroke Survivors: No Improvement From 1999 Through 2023</h3><p>Co-author · Oral abstract accepted</p></div>
+    </article>
+  </div></div></section>
+  <section class="content" id="experience"><div class="wrap"><h2 class="section-title">Research experience</h2>
+    <p class="section-intro">Research appointments across medical image analysis, generative modeling, neuroimaging, and computational genomics.</p>
+    <div class="exp-list">
+      <article class="exp">
+        <span class="role-label">Machine Learning Research Intern</span>
+        <h3>Stanford University</h3><span class="lab-label">AIDE Lab</span>
+        <div class="exp-details"><span>2026–Present</span><span>Mentors: Akshay Chaudhari, David Larson</span></div>
+        <div class="exp-focus"><span>3D CT Generation · Multimodal AI</span></div>
+      </article>
+      <article class="exp">
+        <span class="role-label">Machine Learning Researcher</span>
+        <h3>Johns Hopkins University</h3><span class="lab-label">BIOS Clinical Trials Coordinating Center</span>
+        <div class="exp-details"><span>2024–Present</span><span>Mentor: John Muschelli</span></div>
+        <div class="exp-focus"><span>CT Brain Extraction · Benchmarking</span></div>
+      </article>
+      <article class="exp">
+        <span class="role-label">Deep Learning Researcher</span>
+        <h3>UPMC</h3><span class="lab-label">ARGO Group</span>
+        <div class="exp-details"><span>2021–Present</span><span>Mentor: Helmet T. Karim</span></div>
+        <div class="exp-focus"><span>Brain Aging · MRI Representation Learning</span></div>
+      </article>
+      <article class="exp">
+        <span class="role-label">Neuroimaging Researcher</span>
+        <h3>Massachusetts General Hospital</h3><span class="lab-label">BAnD Lab</span>
+        <div class="exp-details"><span>2025–Present</span><span>Mentor: David H. Salat</span></div>
+        <div class="exp-focus"><span>Cortical Morphometry · Cognition</span></div>
+      </article>
+      <article class="exp">
+        <span class="role-label">Computational Cancer Genomics Researcher</span>
+        <h3>WashU School of Medicine</h3><span class="lab-label">Bolton Lab</span>
+        <div class="exp-details"><span>2025</span><span>Mentor: Kelly Bolton</span></div>
+        <div class="exp-focus"><span>Rare-Variant Screening · Predictive ML</span></div>
+      </article>
+      <article class="exp">
+        <span class="role-label">Clinical Research Data Specialist</span>
+        <h3>University of Miami</h3><span class="lab-label">Miller School of Medicine</span>
+        <div class="exp-details"><span>2023–2025</span><span>Mentors: John Muschelli, Trishul Siddharthan, Paul Blair</span></div>
+        <div class="exp-focus"><span>Lung Ultrasound · Computer Vision</span></div>
+      </article>
+    </div>
+  </div></section>
+  <section class="content" id="contact"><div class="wrap"><h2 class="section-title">Contact</h2><p class="section-intro">For research discussions, collaborations, or questions about my work:</p><div class="actions"><a class="action primary" href="mailto:rushil.srirambhatla10@gmail.com">rushil.srirambhatla10@gmail.com</a><a class="action" href="https://github.com/rsriram2" target="_blank" rel="noopener">GitHub ↗</a><a class="action" href="./Rushil_Srirambhatla_phd_CV.pdf" target="_blank" rel="noopener">Download CV</a></div></div></section>
+</main><footer class="foot"><div class="wrap"><span>© 2026 Rushil Srirambhatla</span><span>Biomedical AI · Computer Vision · Medical Imaging</span></div></footer>
+<script>
+  (() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+
+    const targets = [...document.querySelectorAll('.glance-card, .news-item, .research-entry, .talk, .exp')];
+    document.querySelectorAll('.exp').forEach((card, index) => {
+      card.style.setProperty('--reveal-delay', `${index * 50}ms`);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+        window.setTimeout(() => entry.target.style.removeProperty('--reveal-delay'), 800);
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+
+    document.documentElement.classList.add('motion-ready');
+    targets.forEach((target) => observer.observe(target));
+  })();
+</script>
+</body>
+</html>
